@@ -1,6 +1,8 @@
+import Carousel from "@/components/Carousel"
+
 export default function Landing() {
   return (
-    <main className="px-4">
+    <main className="px-4 space-y-16">
       <section className="flex flex-col items-center sm:flex-row-reverse ">
         {/* Insert hero image here */}
         <div className="text-center md:w-full">HERO IMAGE</div>
@@ -16,6 +18,14 @@ export default function Landing() {
             </button>
           </div>
         </div>
+      </section>
+      <section>
+        <h2 className="text-lg font-bold mb-4">Trending</h2>
+        <Carousel />
+        <p className="mb-4">Check out the most popular shows in your city, from Sports and Pokemon to Comic Books and TCG.</p>
+        <button className="rounded-full py-1 px-3 border">
+          <a href="/events">See More</a>
+        </button>
       </section>
     </main>
   );
