@@ -1,4 +1,5 @@
 import Carousel from "@/components/Carousel"
+import LandingFeature from "@/components/LandingFeature";
 
 export default function Landing() {
   return (
@@ -27,6 +28,18 @@ export default function Landing() {
           <a href="/events">See More</a>
         </button>
       </section>
+      <LandingFeature
+        heading="Free for Event Organizers, Forever"
+        description="The #1 way to sell your tickets and vendor tables online. Lowest fees in the industry. Launch your event in under 5 minutes."
+      />
+      <LandingFeature
+        heading="All Your Attendees & Vendors in One Place"
+        description="Send invites and event updates to re-engage customers directly from your dashboard. Create custom groups by event category & attendance."
+      />
+      <LandingFeature
+        heading="Showcase Your Special Guests & Vendors"
+        description="Make it easy for attendees to preview programming ahead of time. Add guests in just a few clicks. Choose whether to highlight your vendors with their social links and photos."
+      />
     </main>
   );
 }
