@@ -40,6 +40,40 @@ export default function Landing() {
         heading="Showcase Your Special Guests & Vendors"
         description="Make it easy for attendees to preview programming ahead of time. Add guests in just a few clicks. Choose whether to highlight your vendors with their social links and photos."
       />
+      <article>
+        {/* Insert image here */}
+        <div>IMAGE</div>
+        <h3>Track Sales & Get Paid Daily</h3>
+        <p>Monitor event performance in real-time. Sell tickets and get paid ahead of time, no more waiting until the day of your event.</p>
+      </article>
+      <article>
+        <div className="flex">
+          <div className="flex flex-col justify-center">
+            {/* Insert icon here */}
+            <div>ICON</div>
+            <p>Scan</p>
+          </div>
+          <div className="flex flex-col justify-center">
+            {/* Insert icon here */}
+            <div>ICON</div>
+            <p>Check-In</p>
+          </div>
+          <div className="flex flex-col justify-center">
+            {/* Insert icon here */}
+            <div>ICON</div>
+            <p>Track</p>
+          </div>
+        </div>
+        <h3>Mobile App</h3>
+        <p>Scan attendee tickets and check in vendors with the Treasure mobile app.</p>
+        <button>Download on the App Store</button>
+      </article>
+      <article>
+        {/* Insert image here */}
+        <div>IMAGE</div>
+        <h3>Map Your Vendors & Attractions</h3>
+        <p>Create an interactive map or upload your own to guide your attendees through the venue.</p>
+      </article>
     </main>
   );
 }
