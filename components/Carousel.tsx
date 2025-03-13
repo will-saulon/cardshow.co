@@ -3,6 +3,7 @@
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
 import EventCard from './EventCard';
+import { upcomingShows } from '@/data/upcoming-shows';
 
 export default function Carousel() {
   const [sliderRef] = useKeenSlider({
@@ -22,19 +23,18 @@ export default function Carousel() {
       }
     },
     slides: {
-      perView: 2.5,
+      perView: 2,
       spacing: 12
     }
   });
-  const sampleSlides = Array.from({ length: 10 }, (_, i) => i + 1);
 
   return (
     <div ref={sliderRef} className="keen-slider mb-4">
-      {sampleSlides.map((slideNum) =>
+      {upcomingShows.map((event, index) =>
         <EventCard
-          key={slideNum}
+          key={index}
           className="keen-slider__slide"
-          slideNum={slideNum}
+          event={event}
         />
       )}
     </div>
