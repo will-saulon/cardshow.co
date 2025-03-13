@@ -1,120 +1,105 @@
-"use client"
+import Carousel from "@/components/Carousel"
+import LandingFeature from "@/components/LandingFeature";
 
-import Image from "next/image";
-import { useEffect } from "react";
-
-export default function Home() {
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch("/api/test");
-        if (res.ok) {
-          const data = await res.json();
-          console.log(data);
-        }
-      } catch (err) {
-        console.error(err);
-      }
-    }
-
-    fetchData();
-  }, [])
-
+export default function Landing() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <>
+      <main className="px-4 space-y-16">
+        <section className="flex flex-col items-center sm:flex-row-reverse ">
+          {/* Insert hero image here */}
+          <div className="text-center md:w-full">HERO IMAGE</div>
+          <div>
+            <h1 className="text-lg md:text-2xl font-bold mb-4">Find More Hobby Events You Love <span className="text-green-900">Every Weekend</span></h1>
+            <p className="mb-6">Join the #1 community for card shows and hobby events. We make finding and booking shows easy.</p>
+            <div className="flex flex-col items-center md:flex-row space-y-3 md:space-y-0 md:space-x-3">
+              <button className="w-full bg-green-900 text-white rounded-full py-1">
+                <a href="/create">Create Your Event</a>
+              </button>
+              <button className="w-full rounded-full py-1 border">
+                <a href="/events">Browse Events</a>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2 className="text-lg font-bold mb-4">Trending</h2>
+          <Carousel />
+          <p className="mb-4">Check out the most popular shows in your city, from Sports and Pokemon to Comic Books and TCG.</p>
+          <button className="rounded-full py-1 px-3 border">
+            <a href="/events">See More</a>
+          </button>
+        </section>
+        <LandingFeature
+          heading="Free for Event Organizers, Forever"
+          description="The #1 way to sell your tickets and vendor tables online. Lowest fees in the industry. Launch your event in under 5 minutes."
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        <LandingFeature
+          heading="All Your Attendees & Vendors in One Place"
+          description="Send invites and event updates to re-engage customers directly from your dashboard. Create custom groups by event category & attendance."
+        />
+        <LandingFeature
+          heading="Showcase Your Special Guests & Vendors"
+          description="Make it easy for attendees to preview programming ahead of time. Add guests in just a few clicks. Choose whether to highlight your vendors with their social links and photos."
+        />
+        <article>
+          {/* Insert image here */}
+          <div>IMAGE</div>
+          <h3>Track Sales & Get Paid Daily</h3>
+          <p>Monitor event performance in real-time. Sell tickets and get paid ahead of time, no more waiting until the day of your event.</p>
+        </article>
+        <article>
+          <div className="flex">
+            <div className="flex flex-col justify-center">
+              {/* Insert icon here */}
+              <div>ICON</div>
+              <p>Scan</p>
+            </div>
+            <div className="flex flex-col justify-center">
+              {/* Insert icon here */}
+              <div>ICON</div>
+              <p>Check-In</p>
+            </div>
+            <div className="flex flex-col justify-center">
+              {/* Insert icon here */}
+              <div>ICON</div>
+              <p>Track</p>
+            </div>
+          </div>
+          <h3>Mobile App</h3>
+          <p>Scan attendee tickets and check in vendors with the Treasure mobile app.</p>
+          <button>Download on the App Store</button>
+        </article>
+        <article>
+          {/* Insert image here */}
+          <div>IMAGE</div>
+          <h3>Map Your Vendors & Attractions</h3>
+          <p>Create an interactive map or upload your own to guide your attendees through the venue.</p>
+        </article>
+        <section>
+          <h3>Join the Fastest Growing Community for Card Shows and Hobby Events</h3>
+          <button className="w-full bg-green-900 text-white rounded-full py-1">
+            <a href="/create">Create Your Event with CardShow</a>
+          </button>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <footer className="p-8 flex flex-col justify-center items-center">
+        <div className="flex flex-wrap space-x-4 justify-center text-xs">
+          <a href="/events">Events</a>
+          <a href="/contact">Contact</a>
+          <a href="/features">Features</a>
+          <a href="/guides">Guides</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms-of-use">Terms of Use</a>
+        </div>
+        {/* Inster logo here */}
+        <div>LOGO</div>
+        <div className="flex space-x-4">
+          <p>Instagram icon link</p>
+          <p>Youtube icon link</p>
+        </div>
+        <p className="text-xs">&copy; 2025 CardShow. All rights reserved.</p>
       </footer>
-    </div>
+    </>
   );
 }
