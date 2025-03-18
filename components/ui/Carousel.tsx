@@ -2,7 +2,7 @@
 
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
-import EventCard from './EventCard';
+import EventCard from '../events/EventCard';
 import { upcomingShows } from '@/data/upcoming-shows';
 
 export default function Carousel() {
