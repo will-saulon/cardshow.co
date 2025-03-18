@@ -33,7 +33,6 @@ export default function Carousel() {
       {upcomingShows.map((event, index) =>
         <EventCard
           key={index}
-          className="keen-slider__slide"
           event={event}
         />
       )}

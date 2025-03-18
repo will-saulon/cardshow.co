@@ -1,9 +1,9 @@
 import { UpcomingShow } from '@/types/types';
 import Image from 'next/image';
 
-export default function EventCard({ className, event }: { className: string, event: UpcomingShow }) {
+export default function EventCard({ event }: { event: UpcomingShow }) {
   return (
-    <article className={`${className} border border-black flex flex-col h-[250px] rounded-md`}>
+    <article className="keen-slider__slide border border-black flex flex-col h-[250px] rounded-md">
       <div className="relative flex-[0_0_80%]">
         <Image
           src={event.image}
