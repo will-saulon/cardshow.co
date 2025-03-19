@@ -1,5 +1,5 @@
-import Carousel from "@/components/Carousel"
-import LandingFeature from "@/components/LandingFeature";
+import Carousel from "@/components/ui/Carousel"
+import LandingFeature from "@/components/landing/LandingFeature";
 
 export default function Landing() {
   return (

@@ -2,7 +2,7 @@
 
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
-import EventCard from './EventCard';
+import EventCard from '../events/EventCard';
 import { upcomingShows } from '@/data/upcoming-shows';
 
 export default function Carousel() {
@@ -33,7 +33,6 @@ export default function Carousel() {
       {upcomingShows.map((event, index) =>
         <EventCard
           key={index}
-          className="keen-slider__slide"
           event={event}
         />
       )}
